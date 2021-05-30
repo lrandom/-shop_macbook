@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ShopMacbook:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>ShopMacbook</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="ShopMacbook-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="ShopMacbook:war exploded" />
+    </root>
+  </artifact>
+</component>
