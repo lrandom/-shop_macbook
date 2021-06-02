@@ -20,7 +20,7 @@
 <body>
 <div class="container">
     <jsp:include page="./../commons/nav.jsp"/>
-    
+
     <form method="post" action="${pageContext.request.contextPath}/admin/category/do-add">
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Name</label>

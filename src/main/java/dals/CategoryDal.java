@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class CategoryDal extends DB implements IDAL{
+public class CategoryDal extends DB implements IDAL<Category>{
     public CategoryDal() {
         super();
         setTableName("category");

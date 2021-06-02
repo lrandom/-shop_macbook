@@ -4,15 +4,15 @@ import models.Category;
 
 import java.util.ArrayList;
 
-public interface IDAL {
+public interface IDAL<T> {
 
-    public  ArrayList<Category> getList();
+    public  ArrayList<T> getList();
 
-    public  boolean update(Category updateObject);
+    public  boolean update(T updateObject);
 
     public  boolean delete(int id);
 
-    public boolean insert(Category category);
+    public boolean insert(T category);
 
-    public Category getById(int id);
+    public T getById(int id);
 }

@@ -1,2 +1,4 @@
-package controllers.admin.product;public class ServletInsert {
+package controllers.admin.product;
+
+public class ServletInsert {
 }

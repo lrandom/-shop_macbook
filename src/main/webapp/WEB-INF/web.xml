@@ -54,4 +54,28 @@
         <url-pattern>/admin/category/do-edit</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>ServletProduct</servlet-name>
+        <servlet-class>controllers.admin.product.ServletAdd</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ServletProduct</servlet-name>
+        <url-pattern>/admin/product/add</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ServletProduct</servlet-name>
+        <url-pattern>/admin/product/do-add</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServletHome</servlet-name>
+        <servlet-class>controllers.frontend.ServletHome</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ServletHome</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
 </web-app>
