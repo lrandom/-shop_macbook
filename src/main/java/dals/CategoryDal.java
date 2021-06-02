@@ -33,13 +33,15 @@ public class CategoryDal extends DB implements IDAL{
     }
 
     @Override
-    public boolean update(int id, Category category) {
-        String query = "UPDATE from " + this.tableName + " SET name=? WHERE id=?";
+    public boolean update(Category category) {
+        String query = "UPDATE " + this.tableName + " SET name=? WHERE id=?";
         try {
             PreparedStatement prp = this.connection.prepareStatement(query);
             prp.setString(1, category.getName());
             prp.setInt(2, category.getId());
+            prp.execute();
         } catch (Exception e) {
+            e.printStackTrace();
             return false;
         }
         return true;
@@ -51,6 +53,7 @@ public class CategoryDal extends DB implements IDAL{
         try {
             PreparedStatement prp = this.connection.prepareStatement(query);
             prp.setInt(1, id);
+            prp.execute();
         } catch (Exception e) {
             return false;
         }
@@ -68,5 +71,23 @@ public class CategoryDal extends DB implements IDAL{
             return false;
         }
         return true;
+    }
+
+    @Override
+    public Category getById(int id) {
+        Category category = null;
+        String query = "SELECT * FROM " + this.tableName+" WHERE id="+id;
+        try {
+            Statement stm = this.connection.createStatement();
+            ResultSet rs = stm.executeQuery(query);
+            while (rs.next()) {
+                category = new Category();
+                category.setName(rs.getString("name"));
+                category.setId(rs.getInt("id"));
+            }
+        } catch (Exception e) {
+            return null;
+        }
+        return category;
     }
 }

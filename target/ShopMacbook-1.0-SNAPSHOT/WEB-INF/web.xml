@@ -28,4 +28,30 @@
         <servlet-name>ServletAddCategory</servlet-name>
         <url-pattern>/admin/category/do-add</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServletDeleteCategory</servlet-name>
+        <servlet-class>controllers.admin.category.ServletDelete</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ServletDeleteCategory</servlet-name>
+        <url-pattern>/admin/category/delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServletEditCategory</servlet-name>
+        <servlet-class>controllers.admin.category.ServletEdit</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ServletEditCategory</servlet-name>
+        <url-pattern>/admin/category/update</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ServletEditCategory</servlet-name>
+        <url-pattern>/admin/category/do-edit</url-pattern>
+    </servlet-mapping>
+
 </web-app>

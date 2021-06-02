@@ -18,7 +18,7 @@ public class ServletAdd extends HttpServlet {
         Category category = new Category();
         category.setName(req.getParameter("name"));
         categoryDal.insert(category);
-        resp.sendRedirect( "/"+req.getContextPath()+"/admin/category/list");
+        resp.sendRedirect( Helper.BASE_URL +req.getContextPath()+"/admin/category/list");
     }
 
     @Override
