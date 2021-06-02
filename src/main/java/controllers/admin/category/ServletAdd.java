@@ -14,7 +14,7 @@ import java.io.IOException;
 public class ServletAdd extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        CategoryDal categoryDal = CategoryDal.getInstance();
+        CategoryDal categoryDal = new CategoryDal();
         Category category = new Category();
         category.setName(req.getParameter("name"));
         categoryDal.insert(category);

@@ -63,6 +63,7 @@ public class CategoryDal extends DB implements IDAL{
         try {
             PreparedStatement prp = this.connection.prepareStatement(query);
             prp.setString(1, category.getName());
+            prp.execute();
         } catch (Exception e) {
             return false;
         }

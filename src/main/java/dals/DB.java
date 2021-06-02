@@ -2,9 +2,7 @@ package dals;
 
 import models.Category;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class DB {
@@ -21,18 +19,14 @@ public class DB {
             if (this.connection == null) {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 this.connection = DriverManager.getConnection(MYSQL_URI_CONNECT + "" + DB_NAME, DB_USER, DB_PASS);
+                Statement stm = this.connection.createStatement();
+                stm.executeQuery("SET NAMES 'UTF8'");
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public DB getInstance() {
-        if (db == null) {
-            db = new DB();
-        }
-        return db;
-    }
 
     public void closeConnect() {
         this.connection = null;

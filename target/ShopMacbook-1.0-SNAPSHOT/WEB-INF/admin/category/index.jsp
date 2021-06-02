@@ -5,9 +5,13 @@
   Time: 21:15
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page  pageEncoding="UTF-8"  %>
+
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@taglib prefix="ec" uri="/WEB-INF/tlds/utils" %>
+<fmt:setLocale value="vi_VN"/>
+<fmt:setBundle basename="main"/>
 <html>
 <head>
     <title>Title</title>
@@ -16,6 +20,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
             crossorigin="anonymous"></script>
+    <meta charset="UTF-8"/>
 </head>
 <body>
 <div class="container">
@@ -32,12 +37,15 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Category
+                            <fmt:message key="Category"/>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">List</a></li>
+                            <li><a class="dropdown-item" href="#">
+                                <fmt:message key="List"/>
+                            </a></li>
                             <li>
-                                <a class="dropdown-item" href="${pageContext.request.scheme}://${pageContext.request.serverName}:${pageContext.request.serverPort}/${pageContext.request.contextPath}/admin/category/add">Add</a>
+                                <a class="dropdown-item"
+                                   href="${pageContext.request.scheme}://${pageContext.request.serverName}:${pageContext.request.serverPort}/${pageContext.request.contextPath}/admin/category/add">Add</a>
                             </li>
                         </ul>
                     </li>
@@ -46,12 +54,22 @@
         </div>
     </nav>
 
+    <ec:EchoHello/>
+   <ec:EchoHello/>
+   <ec:EchoHello/>
+   <ec:EchoHello/>
+   <ec:EchoHello/>
+   <ec:EchoHello/>
+
+    <ec:BlockSwearWord content="Holy shit, You are bitch, right?"></ec:BlockSwearWord>
     <table class="table">
         <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Thao tác</th>
+            <th scope="col">
+                <fmt:message key="Name"/>
+            </th>
+            <th scope="col"><fmt:message key="Operation"/> </th>
         </tr>
         </thead>
         <tbody>
