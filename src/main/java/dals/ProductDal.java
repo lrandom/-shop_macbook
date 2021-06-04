@@ -72,6 +72,23 @@ public class ProductDal extends DB implements IDAL<Product> {
 
     @Override
     public Product getById(int id) {
-        return null;
+        Product product = null;
+        String query = "SELECT * FROM " + this.tableName+" WHERE id="+id;
+        try {
+            Statement stm = this.connection.createStatement();
+            ResultSet rs = stm.executeQuery(query);
+            while (rs.next()) {
+                product = new Product();
+                product.setName(rs.getString("name"));
+                product.setId(rs.getInt("id"));
+                product.setImage(rs.getString("image"));
+                product.setQuantity(rs.getInt("quantity"));
+                product.setPrice(rs.getFloat("price"));
+                product.setDescription(rs.getString("description"));
+            }
+        } catch (Exception e) {
+            return null;
+        }
+        return product;
     }
 }

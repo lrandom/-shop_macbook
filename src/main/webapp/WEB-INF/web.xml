@@ -78,4 +78,29 @@
         <servlet-name>ServletHome</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>ServletCart</servlet-name>
+        <servlet-class>controllers.frontend.ServletCart</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ServletCart</servlet-name>
+        <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServletShowCart</servlet-name>
+        <servlet-class>controllers.frontend.ServletShowCart</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ServletShowCart</servlet-name>
+        <url-pattern>/show-cart</url-pattern>
+    </servlet-mapping>
+
+    <session-config>
+        <session-timeout>10000</session-timeout>
+    </session-config>
 </web-app>
